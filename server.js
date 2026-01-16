@@ -48,8 +48,8 @@ async function sendToAll() {
 
         try {
             await webpush.sendNotification(subscription, JSON.stringify({
-                title: 'Daily Marchino',
-                body: 'È il momento di attingere alla saggezza di Marchino.',
+                title: 'Marchino',
+                body: 'È il momento della dose quotidiana di stoicismo.',
                 url: '/marchino/'
             }));
         } catch (err) {
