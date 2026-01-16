@@ -50,7 +50,7 @@ async function sendToAll() {
             await webpush.sendNotification(subscription, JSON.stringify({
                 title: 'Daily Marchino',
                 body: 'È il momento di attingere alla saggezza di Marchino.',
-                url: '/dailymarchino/'
+                url: '/marchino/'
             }));
         } catch (err) {
             if (err.statusCode === 410 || err.statusCode === 404) {
