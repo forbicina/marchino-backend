@@ -1,7 +1,6 @@
 import express from 'express';
 import webpush from 'web-push';
 import { Redis } from '@upstash/redis';
-import cron from 'node-cron';
 import cors from 'cors';
 
 const app = express();
@@ -62,13 +61,6 @@ async function sendToAll() {
     }
 }
 
-// Cron job: ogni giorno alle 9:00 (ora server)
-cron.schedule('0 9 * * *', () => {
-    console.log('Cron triggered: invio notifiche');
-    sendToAll();
-}, {
-    timezone: "Europe/Rome"
-});
 
 // Endpoint per test manuale
 app.post('/test-push', async (req, res) => {
